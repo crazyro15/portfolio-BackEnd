@@ -9,6 +9,7 @@ public interface IAcercaDeService {
     public void agregarPersona (AcercaDe pers);
     public void borrarPersona (Long id);
     public AcercaDe buscarPersona (Long id);
+    public void actualizarPersona(AcercaDe pers);
     
     
 }

@@ -1,4 +1,3 @@
-
 package com.portfolio.MiPortfolio.model;
 
 import javax.persistence.Entity;
@@ -10,29 +9,29 @@ import lombok.Setter;
 
 @Getter @Setter
 @Entity
-public class AcercaDe {
-    
+public class Educacion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    private String presentacion;
-    private String nombre;
-    private String puesto;
-    private String info;
+    private String lugar;
+    private String titulo;
     private String img;
+    private String comienzo;
+    private String fin;
     
-    public AcercaDe() {
+    public Educacion(){
     }
-
-    public AcercaDe(Long id, String presentacion, String nombre, String puesto, String info, String img) {
+    
+    public Educacion(Long id, String lugar, String titulo, String img, String comienzo, String fin) {
         this.id = id;
-        this.presentacion = presentacion;
-        this.nombre = nombre;
-        this.puesto = puesto;
-        this.info = info;
+        this.lugar = lugar;
+        this.titulo = titulo;
         this.img = img;
+        this.comienzo = comienzo;
+        this.fin = fin;
     }
-    
     
 }
+
+

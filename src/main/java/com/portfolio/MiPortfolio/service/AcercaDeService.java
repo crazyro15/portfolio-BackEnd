@@ -32,5 +32,10 @@ public class AcercaDeService implements IAcercaDeService {
     public AcercaDe buscarPersona(Long id) {
         return acercaRepo.findById(id).orElse(null);
     }
+
+    @Override
+    public void actualizarPersona(AcercaDe pers) {
+        acercaRepo.save(pers);
+    }
     
 }
