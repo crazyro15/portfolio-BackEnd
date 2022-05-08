@@ -3,8 +3,10 @@ package com.portfolio.MiPortfolio.controller;
 
 import com.portfolio.MiPortfolio.model.AcercaDe;
 import com.portfolio.MiPortfolio.model.Educacion;
+import com.portfolio.MiPortfolio.model.Experiencia;
 import com.portfolio.MiPortfolio.service.IAcercaDeService;
 import com.portfolio.MiPortfolio.service.IEducacionService;
+import com.portfolio.MiPortfolio.service.IExperienciaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -23,6 +25,8 @@ public class Controller {
     private IAcercaDeService acercaServ;
     @Autowired
     private IEducacionService eduServ;
+    @Autowired
+    private IExperienciaService expServ;
     
 //Métodos Acerca De
     
@@ -70,5 +74,27 @@ public class Controller {
         eduServ.actualizarEducacion(educ);
     }
     
-   
+    //Metodos experiencia
+    
+    @PostMapping ("/experiencia/new")
+    public void crearExperiencia (@RequestBody Experiencia exp) {
+        expServ.crearExperiencia(exp);
+    }
+    
+    @GetMapping ("/experiencia/ver")
+    @ResponseBody
+    public List<Experiencia> verExperiencia() {
+        return expServ.verExperiencia();
+    }
+    
+    @DeleteMapping ("/experiencia/delete/{id}")
+    public void borrarExperiencia (@PathVariable Long id) {
+        expServ.borrarExperiencia(id);
+    }
+    
+    @PutMapping("/experiencia/update")
+    public void actualizarEducacion (@RequestBody Experiencia exp) {
+        expServ.actualizarExperiencia(exp);
+    }
+    
 }
