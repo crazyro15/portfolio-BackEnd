@@ -93,7 +93,7 @@ public class Controller {
     }
     
     @PutMapping("/experiencia/update")
-    public void actualizarEducacion (@RequestBody Experiencia exp) {
+    public void actualizarExperiencia (@RequestBody Experiencia exp) {
         expServ.actualizarExperiencia(exp);
     }
     
