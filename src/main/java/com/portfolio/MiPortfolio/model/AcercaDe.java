@@ -33,6 +33,10 @@ public class AcercaDe {
         this.info = info;
         this.img = img;
     }
+
+    
+    
+    
     
     
 }
